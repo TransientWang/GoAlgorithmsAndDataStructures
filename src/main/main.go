@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	print(greedy.CanCompleteCircuit([]int{3, 3, 3}, []int{3, 4, 4}))
+	print(greedy.Candy([]int{1, 0, 2}))
 }
