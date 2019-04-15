@@ -29,3 +29,20 @@ func LongestPalindromeSubseq(s string) int {
 	return dp[0][size-1]
 
 }
+
+//53. 最大子序和
+func maxSubArray(nums []int) int {
+	var sum int
+	res := nums[0]
+	for _, val := range nums {
+		if sum < 0 {
+			sum = val
+		} else {
+			sum += val
+		}
+		if sum > res {
+			res = sum
+		}
+	}
+	return res
+}
