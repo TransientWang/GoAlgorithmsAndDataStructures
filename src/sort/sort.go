@@ -69,3 +69,41 @@ func merge(a []int, l, m, r int) {
 		}
 	}
 }
+
+func maxHeapify(a []int, i, size int) {
+	var (
+		max   int
+		left  = i << 1
+		right = i<<1 + 1
+	)
+
+	if left < size && a[i] < a[left] {
+		max = left
+	} else {
+		max = i
+	}
+	if right < size && a[max] < a[right] {
+		max = right
+	}
+
+	if max != i {
+		swap(a, i, max)
+		maxHeapify(a, max, size)
+	}
+}
+
+func buildMaxHeadp(a []int) {
+	for i := len(a)/2 + 1; i >= 0; i-- {
+		maxHeapify(a, i, len(a))
+	}
+}
+
+func heapSort(a []int) {
+	buildMaxHeadp(a)
+
+	for i := 0; i < len(a); i++ {
+		swap(a, 0, len(a)-i-1)
+		maxHeapify(a, 0, len(a)-i-1)
+	}
+
+}

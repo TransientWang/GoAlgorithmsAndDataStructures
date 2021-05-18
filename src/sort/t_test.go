@@ -26,3 +26,8 @@ func TestMergeSort(t *testing.T) {
 	MergeSort(a, 0, len(a)-1)
 	t.Log(a)
 }
+
+func TestHeapSort(t *testing.T) {
+	heapSort(a)
+	t.Log(a)
+}
