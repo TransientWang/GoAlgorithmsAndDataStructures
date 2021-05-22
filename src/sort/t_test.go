@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var a = []int{44, 3, 243, 1, 98, 50, 45, -1}
+var a = []int{44, 3, 243, 1, 98, 50, 45, 1}
 
 func TestQuickSort(t *testing.T) {
 
@@ -28,6 +28,8 @@ func TestMergeSort(t *testing.T) {
 }
 
 func TestHeapSort(t *testing.T) {
-	heapSort(a)
-	t.Log(a)
+
+	t.Log(countingSort(a)[1:])
 }
+
+

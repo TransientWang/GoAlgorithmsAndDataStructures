@@ -1,6 +1,8 @@
 package sort
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func QuickSort(a []int, lidx, ridx int) {
 	if lidx >= ridx {
@@ -106,4 +108,56 @@ func heapSort(a []int) {
 		maxHeapify(a, 0, len(a)-i-1)
 	}
 
+}
+
+func quickPartition(a []int, l, r int) int {
+	x := a[r]
+	i := l
+	for j := l; j < r; j++ {
+
+		if a[j] < x {
+			swap(a, i, j)
+			i++
+		}
+	}
+	swap(a, i, r)
+	return i
+}
+
+func quickSort(a []int, l, r int) {
+	if l >= r {
+		return
+	}
+	i := quickPartition(a, l, r)
+	fmt.Println(a, i, l, r)
+	quickSort(a, l, i-1)
+	quickSort(a, i, r)
+}
+
+func countingSort(a []int) []int {
+	var max int
+	for _, i2 := range a {
+		if i2 > max {
+			max = i2
+		}
+	}
+	b := make([]int, len(a)+1, len(a)+1)
+	c := make([]int, max+1, max+1)
+	for _, val := range a {
+		c[val]++
+	}
+	for i := range c {
+		if i == 0 {
+			continue
+		}
+		c[i] += c[i-1]
+	}
+	fmt.Println(c)
+
+	for i := len(a) - 1; i >= 0; i-- {
+		fmt.Println(a[i],c[a[i]])
+		b[c[a[i]]] = a[i]
+		c[a[i]]--
+	}
+	return b
 }
