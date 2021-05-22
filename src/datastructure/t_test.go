@@ -92,3 +92,28 @@ func TestSingleLink(t *testing.T) {
 	head = head.next
 
 }
+
+func TestSingleLink2(t *testing.T) {
+	var (
+		err  error
+		head = &SingleLink{
+			Val: 1,
+		}
+		h = head
+	)
+
+	head, err = head.Append(2)
+	t.Log(head, err)
+	head, err = head.Append(3)
+	t.Log(head, err)
+	t.Log("------------\n")
+	h = h.Reverse2(nil)
+	t.Log("------------\n")
+	t.Log(h)
+	h = h.next
+	t.Log(h)
+	h = h.next
+	t.Log(h)
+	h = h.next
+
+}

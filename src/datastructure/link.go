@@ -90,7 +90,7 @@ func (l *SingleLink) Reverse() *SingleLink {
 	if b.next != nil {
 		c = b.next
 	}
-	fmt.Println(a,b,c)
+	fmt.Println(a, b, c)
 	// a -> b -> c
 
 	//      t- > c
@@ -98,7 +98,7 @@ func (l *SingleLink) Reverse() *SingleLink {
 	l.next = nil
 	for b != nil {
 		b.next = a
-		fmt.Println(a,b,c)
+		fmt.Println(a, b, c)
 		a = b
 		b = c
 		if c != nil {
@@ -106,4 +106,14 @@ func (l *SingleLink) Reverse() *SingleLink {
 		}
 	}
 	return a
+}
+
+// 2                     1
+func (l *SingleLink) Reverse2(prev *SingleLink) *SingleLink {
+	if l == nil {
+		return prev
+	}
+	n := l.next
+	l.next = prev
+	return n.Reverse2(l)
 }
