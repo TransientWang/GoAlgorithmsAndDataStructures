@@ -205,7 +205,7 @@ func (h *hashTable) Range() (hasNext func() bool, next func(), getNode *RangeNod
 
 	next = func() {
 		if !hasNext() {
-			panic("range over flow")
+			panic("range overflow")
 		}
 		if curNode != nil {
 			curNode = curNode.next

@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd82eb1c-cdba-4f62-b931-63cdc61849de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/datastructure/HashTable.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/HashTable.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/datastructure/hash_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/hash_test.go" afterDir="false" />
     </list>
@@ -138,22 +139,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="311" key="GridCell.Tab.0.bottom" timestamp="1621763485647">
+    <state width="1398" height="409" key="GridCell.Tab.0.bottom" timestamp="1621769856194">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="311" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1621763485647" />
-    <state width="1398" height="311" key="GridCell.Tab.0.center" timestamp="1621763485646">
+    <state width="1398" height="409" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1621769856194" />
+    <state width="1398" height="409" key="GridCell.Tab.0.center" timestamp="1621769856193">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="311" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1621763485646" />
-    <state width="1398" height="311" key="GridCell.Tab.0.left" timestamp="1621763485645">
+    <state width="1398" height="409" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1621769856193" />
+    <state width="1398" height="409" key="GridCell.Tab.0.left" timestamp="1621769856193">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="311" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1621763485645" />
-    <state width="1398" height="311" key="GridCell.Tab.0.right" timestamp="1621763485647">
+    <state width="1398" height="409" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1621769856193" />
+    <state width="1398" height="409" key="GridCell.Tab.0.right" timestamp="1621769856194">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="311" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1621763485647" />
+    <state width="1398" height="409" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1621769856194" />
     <state width="1398" height="286" key="GridCell.Tab.1.bottom" timestamp="1621762544763">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -178,11 +179,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/datastructure/HashTable.go</url>
-          <line>112</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/datastructure/hash_test.go</url>
           <line>10</line>
