@@ -37,14 +37,26 @@ func (l *HashLinkNode) Delete() (prev, next *HashLinkNode, err error) {
 		return nil, nil, errors.New("node is nil")
 	}
 	prev, next = l.prev, l.next
-	if l.prev != nil {
-		l.prev.next = l.next
+	fmt.Print("delete ", l.Val, func() interface{} {
+		if next != nil {
+			if next.next != nil {
+				fmt.Println(" next.next ", next.next.Val)
+			}
+			return next.Val
+		}
+
+		return nil
+	}())
+	fmt.Print("\n")
+	if prev != nil {
+		l.prev.next = next
 	}
-	if l.next.prev != nil {
-		l.next.prev = l.prev
+	if next != nil {
+		l.next.prev = prev
 	}
 
 	l.prev, l.next = nil, nil
+
 	return
 }
 
@@ -61,33 +73,40 @@ func NewHashTable() *hashTable {
 
 func (h *hashTable) growth() {
 	h.backupArr = make([]*HashLinkNode, 2*len(h.arr), 2*len(h.arr))
+	add := func(node *HashLinkNode) {
+		sum := h.sum(&node.Key)
+		idx := int(sum) % len(h.backupArr)
+		newNode := h.backupArr[idx]
+		if newNode == nil {
+			h.backupArr[idx] = &HashLinkNode{
+				Val: node.Val,
+				Key: node.Key,
+			}
+			return
+		}
+
+		for {
+			if newNode.next == nil {
+				newNode.Append(node.Key, node.Val)
+				return
+			} else {
+				newNode = newNode.next
+			}
+
+		}
+	}
 	for _, node := range h.arr {
 		for node != nil {
-			sum := h.sum(&node.Key)
-			idx := int(sum) % len(h.backupArr)
-			newNode := h.backupArr[idx]
-			if newNode == nil {
-				h.backupArr[idx] = &HashLinkNode{
-					Val: node.Val,
-					Key: node.Key,
-				}
-				continue
-			}
-
-			for {
-				if newNode.next == nil {
-					newNode.Append(node.Key, node.Val)
-					break
-				} else {
-					newNode = newNode.next
-				}
-
-			}
+			add(node)
 			node = node.next
-
 		}
 
 	}
+	//fmt.Println("=================growth=================")
+	//fmt.Println(h.arr)
+	//fmt.Println(h.backupArr)
+	//fmt.Println("=================growth=================")
+	h.arr = nil
 	h.arr = h.backupArr
 	h.backupArr = nil
 }
@@ -102,46 +121,103 @@ func (h *hashTable) idx(key *string) int64 {
 	return h.sum(key) % int64(len(h.arr))
 }
 func (h *hashTable) Set(key string, val interface{}) {
-	defer fmt.Println("---------------------------------------")
+	//defer fmt.Println("---------------------------------------")
 	h.count++
 	load := float32(h.count) / float32(len(h.arr))
-	fmt.Println("key", key, "load", load)
+	//fmt.Println("key", key, "load", load)
 	if load >= 0.75 {
 		h.growth()
 	}
 
 	idx := h.idx(&key)
-	fmt.Println("idx", idx)
+	//fmt.Println("idx", idx)
 	node := h.arr[idx]
 	if node == nil {
 		h.arr[idx] = &HashLinkNode{
 			Key: key,
 			Val: val,
 		}
-		fmt.Println("key ", key, " insert into link head")
+		//fmt.Println("key ", key, " insert into link head")
 		return
 	}
 	for node.next != nil {
+		if node.Key == key {
+			return
+		}
 		node = node.next
 	}
 	_, err := node.Append(key, val)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("key ", key, " insert into link tail")
+	//fmt.Println("key ", key, " insert into link tail")
 
 }
-
+func (l *HashLinkNode) Search(key string) *HashLinkNode {
+	if l == nil {
+		return nil
+	}
+	if l.Key == key {
+		return l
+	}
+	return l.next.Search(key)
+}
 func (h *hashTable) Get(key string) interface{} {
 	idx := h.idx(&key)
-	node := h.arr[idx]
-	for {
-		if node == nil {
-			return nil
-		} else if node.Key == key {
-			return node.Val
-		} else {
-			node = node.next
-		}
+	node := h.arr[idx].Search(key)
+	if node != nil {
+		return node.Val
 	}
+	return nil
+}
+
+func (h *hashTable) Delete(key string) {
+	idx := h.idx(&key)
+	node := h.arr[idx].Search(key)
+	if node == nil {
+		return
+	}
+	//fmt.Println("search", node.Val)
+	_, next, _ := node.Delete()
+	if node == h.arr[idx] {
+		//fmt.Println("node ",node.Val, node.prev, node.next)
+
+		h.arr[idx] = next
+		//fmt.Println("h.arr[idx] ", h.arr[idx])
+	}
+}
+
+type RangeNode struct {
+	Key string
+	Val interface{}
+}
+
+func (h *hashTable) Range() (hasNext func() bool, next func(), getNode *RangeNode) {
+	var (
+		idx, count int
+		curNode    *HashLinkNode
+	)
+	getNode = &RangeNode{}
+
+	hasNext = func() bool {
+		return count < h.count
+	}
+
+	next = func() {
+		if !hasNext() {
+			panic("range over flow")
+		}
+		if curNode != nil {
+			curNode = curNode.next
+		}
+		for curNode == nil {
+			curNode = h.arr[idx]
+			idx++
+		}
+		getNode.Key = curNode.Key
+		getNode.Val = curNode.Val
+		count++
+	}
+	next()
+	return
 }
