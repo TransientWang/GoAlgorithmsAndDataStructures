@@ -222,6 +222,7 @@ func (h *hashTable) Range() (hasNext func() bool, next func(), getNode *RangeNod
 		getNode.Key = curNode.Key
 		getNode.Val = curNode.Val
 	}
-	next()
+
+	next() //for 初始化
 	return
 }
