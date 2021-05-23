@@ -192,31 +192,35 @@ type RangeNode struct {
 	Val interface{}
 }
 
+//for 1 ；2；3 执行顺序 ：初始化 1 ，判断2 成功则进入执行逻辑，然后执行 3 ，再判断 2 以此类推
+// 1 -> 2 -> 3 -> 2 -> 3- >2
 func (h *hashTable) Range() (hasNext func() bool, next func(), getNode *RangeNode) {
 	var (
 		idx, count int
 		curNode    *HashLinkNode
 	)
+
 	getNode = &RangeNode{}
 
 	hasNext = func() bool {
-		return count < h.count
+		return count <= h.count
 	}
 
 	next = func() {
-		if !hasNext() {
-			panic("range overflow")
-		}
+		count += 1
 		if curNode != nil {
 			curNode = curNode.next
 		}
 		for curNode == nil {
+			if idx >= len(h.arr) {
+				getNode = nil
+				return
+			}
 			curNode = h.arr[idx]
 			idx++
 		}
 		getNode.Key = curNode.Key
 		getNode.Val = curNode.Val
-		count++
 	}
 	next()
 	return

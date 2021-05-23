@@ -7,7 +7,7 @@ import (
 
 func TestName(t *testing.T) {
 	hash := NewHashTable()
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 2; i++ {
 		hash.Set(cast.ToString(i), i)
 	}
 	//for i := 0; i < 100; i++ {
@@ -36,6 +36,6 @@ func TestName(t *testing.T) {
 	//}
 
 	for hasNext, next, getNode := hash.Range(); hasNext(); next() {
-		t.Log(getNode)
+		t.Log("get Node", getNode)
 	}
 }
