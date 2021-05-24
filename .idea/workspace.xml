@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd82eb1c-cdba-4f62-b931-63cdc61849de" name="Default Changelist" comment="" />
+    <list default="true" id="bd82eb1c-cdba-4f62-b931-63cdc61849de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datastructure/DSOne.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/DSOne.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datastructure/hash_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/hash_test.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,8 +57,8 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Go Test.TestName in github.com/GoAlgorithmsAndDataStructures/src/datastructure">
-    <configuration name="TestA in github.com/GoAlgorithmsAndDataStructures/src/datastructure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestD in github.com/GoAlgorithmsAndDataStructures/src/datastructure">
+    <configuration name="TestD in github.com/GoAlgorithmsAndDataStructures/src/datastructure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="GoAlgorithmsAndDataStructures" />
       <working_directory value="$PROJECT_DIR$/src/datastructure" />
       <framework value="gotest" />
@@ -62,7 +66,7 @@
       <package value="github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestA\E$" />
+      <pattern value="^\QTestD\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestLink in github.com/GoAlgorithmsAndDataStructures/src/datastructure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -111,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestD in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
         <item itemvalue="Go Test.TestName in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
         <item itemvalue="Go Test.TestSingleLink2 in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
         <item itemvalue="Go Test.TestSingleLink in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
         <item itemvalue="Go Test.TestLink in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
-        <item itemvalue="Go Test.TestA in github.com/GoAlgorithmsAndDataStructures/src/datastructure" />
       </list>
     </recent_temporary>
   </component>
@@ -135,22 +139,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="242" key="GridCell.Tab.0.bottom" timestamp="1621771442763">
+    <state width="1398" height="242" key="GridCell.Tab.0.bottom" timestamp="1621878596107">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="242" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1621771442763" />
-    <state width="1398" height="242" key="GridCell.Tab.0.center" timestamp="1621771442762">
+    <state width="1398" height="242" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1621878596107" />
+    <state width="1398" height="242" key="GridCell.Tab.0.center" timestamp="1621878596095">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="242" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1621771442762" />
-    <state width="1398" height="242" key="GridCell.Tab.0.left" timestamp="1621771442761">
+    <state width="1398" height="242" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1621878596095" />
+    <state width="1398" height="242" key="GridCell.Tab.0.left" timestamp="1621878596094">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="242" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1621771442761" />
-    <state width="1398" height="242" key="GridCell.Tab.0.right" timestamp="1621771442762">
+    <state width="1398" height="242" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1621878596094" />
+    <state width="1398" height="242" key="GridCell.Tab.0.right" timestamp="1621878596095">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="242" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1621771442762" />
+    <state width="1398" height="242" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1621878596095" />
     <state width="1398" height="286" key="GridCell.Tab.1.bottom" timestamp="1621762544763">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -167,10 +171,18 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="286" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1621762544763" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1621874987004">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1621874987004" />
     <state x="496" y="247" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1621357628130">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="496" y="247" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.23.1440.877@0.23.1440.877" timestamp="1621357628130" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1621771539089">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1621771539089" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

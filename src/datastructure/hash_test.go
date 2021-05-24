@@ -39,3 +39,9 @@ func TestName(t *testing.T) {
 		t.Log("get Node", getNode)
 	}
 }
+
+func TestD(t *testing.T) {
+	t.Log(isbl(1,3))
+
+
+}
